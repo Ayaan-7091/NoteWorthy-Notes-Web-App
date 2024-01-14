@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="row">
+
+    <div class="col-md-4 mx-auto">
+<form action="" class="login-form text-center" method="post">
+    <div class="delete-margin"><p>Login </p> <a href="{%url 'home' %}"><p id="delete-cancel-btn">   X</p></a></div>
+
+
+    {% csrf_token %} 
+    
+    {{form.as_p}}
+    <input type="submit" value="Login">
+
+
+
+</form>
+</div>
+</div>
+{% endblock body %}

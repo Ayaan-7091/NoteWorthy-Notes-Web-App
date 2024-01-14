@@ -1,0 +1,71 @@
+
+{% extends "base.html" %}
+
+    {% block body %}
+
+    <div class="slogan">
+        <div class="sloganContent">
+        <span class="item add"><img id="addBtn" src="../static/Images/add-btn-7.png" alt=""></span>
+        <span class="item sloganText"> Note it !</span>
+    </div>
+    </div>
+
+
+    <div class="main">
+
+    {% for note in note %}
+
+
+        <div class="note-card">
+
+         <div class="note-content">{{note.content|truncatechars:100}}</div>
+         <div class="note-title">{{note.title}}<a href="/notes/{{note.id}}"><button>View</button></a></div>
+
+            
+    </div>
+
+  
+    {% endfor %}
+
+    
+    <div class="note-add-card">
+
+        <a href="{%url 'create'%}"><img id="add-note-btn" src="../static/Images/add-btn-9.png" alt=""></a>
+      
+
+           
+   </div>
+
+
+</div>
+
+
+<script>
+    const test = document.querySelector(".sloganText");
+
+    const textLoad= ()=>{
+        setTimeout(() => {
+            test.textContent="Note It !";
+        }, 0);
+
+        setTimeout(() => {
+            test.textContent="Review It !";
+        }, 4000);
+
+        setTimeout(() => {
+            test.textContent="ShareIt !";
+        }, 8000);
+
+
+
+
+        
+    }
+
+    
+    textLoad();
+    setInterval(textLoad,12000)
+
+</script>
+
+    {% endblock body %}

@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+{%load static%}
+
+    {% block body %}
+
+    <div class="row ">
+        <div class="col-md-7 form-row mx-auto" >
+
+            <form action="" class="notes-form" method="post" >
+    <div class="delete-margin"><p>Note </p> <a href="{%url 'notes' %}"><p id="delete-cancel-btn">   X</p></a></div>
+
+            {% csrf_token %} 
+
+                {{form}}
+                <button type="submit">SAVE</button>
+            </form>
+        </div>
+    </div>
+
+    {% endblock body %}
